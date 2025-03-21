@@ -5,7 +5,7 @@
 </head>
 <body>
     <h2>Enter data</h2>
-    <form action="{% url 'students' %}" method="post">
+    <form action="{% url 'calc' %}" method="post">
         {% csrf_token %}
         Name: <input type="text" name="Name"/> <br/>
         <h3>Enter Marks: </h3> <br/>
@@ -14,5 +14,10 @@
         Maths: <input type="text" name="Math"/> <br/>
         <input type="submit" value="calc"/>
     </form>
+    {% if name and marks %}
+        <h1>Name: {{name}}</h1>
+        <h1>Avg Marks: {{marks}}</h1>
+        <h1>Grade: {{grade}}</h1>
+    {% endif %}
 </body>
 </html>
