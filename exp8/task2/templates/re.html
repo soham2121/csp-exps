@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Task 2</title>
+</head>
+<body>
+    <h2>Enter data</h2>
+    <form action="{% url 'students' %}" method="post">
+        {% csrf_token %}
+        Name: <input type="text" name="Name"/> <br/>
+        <h3>Enter Marks: </h3> <br/>
+        Physics: <input type="text" name="Phy"/> <br/>
+        Chemistry: <input type="text" name="Chem"/> <br/>
+        Maths: <input type="text" name="Math"/> <br/>
+        <input type="submit" value="calc"/>
+    </form>
+</body>
+</html>

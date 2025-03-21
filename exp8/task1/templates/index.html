@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 1</title>
+</head>
+<body>
+    <h2>Enter Dimensions</h2>
+    <form action="{% url 'calculate' %}" method="post">
+        {% csrf_token %}
+        Length: <input type="text" name="Length" required><br>
+        Width: <input type="text" name="Width" required><br>
+        <input type="submit" value="calculate">
+    </form>
+
+    {% if area %}
+        <h1>Area: {{ area }}</h1>
+    {% endif %}
+</body>
+</html>
